@@ -85,7 +85,9 @@ var albumArtist;
 var albumReleaseInfo;
 var albumImage;
 var albumSongList;
- 
+
+var songListContainer = document.getElementsByClassName('album-view-song-list')[0];
+
  window.onload = function() {
      albumTitle = document.getElementsByClassName('album-view-title')[0];
      albumArtist = document.getElementsByClassName('album-view-artist')[0];
@@ -98,7 +100,7 @@ var albumSongList;
      var list = 1;
      
      albumImage.addEventListener('click', function(album) {
-       setCurrentAlbum(albumsArray[list]);
+       setCurrentAlbum(albumArray[list]);
        list++; 
        if (list == albumArray.length) {
            list = 0;
