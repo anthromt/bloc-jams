@@ -28,6 +28,29 @@ var albumPicasso = {
          { title: 'Wrong phone number', duration: '2:15'}
      ]
  };
+
+var albumWilco = {
+     title: 'Yankee Hotel Foxtrot',
+     artist: 'Wilco',
+     label: 'Reprise',
+     year: '2001',
+     albumArtUrl: 'assets/images/album_covers/20.png',
+     songs: [
+         { title: 'I Am Trying to Break Your Heart?', duration: '6:57' },
+         { title: 'Kamera', duration: '3:29' },
+         { title: 'Radio Cure', duration: '5:08'},
+         { title: 'War on War', duration: '3:47' },
+         { title: 'Jesus, Etc.', duration: '3:50'},
+         { title: 'Ashes of American Flags', duration: '4:43'},
+         { title: 'Heavy Metal Drummer', duration: '3:08'},
+         { title: 'I\'m the Man Who Loves You', duration: '3:55'},
+         { title: 'Pot Kettle Black', duration: '4:00'},
+         { title: 'Poor Places', duration: '5:15'},
+         { title: 'Reservations', duration: '7:22'}
+     ]
+ };
+
+
  var createSongRow = function(songNumber, songName, songLength) {
      var template =
         '<tr class="album-view-song-item">'
@@ -39,13 +62,8 @@ var albumPicasso = {
  
      return template;
  };
+
 var setCurrentAlbum = function(album) {
-     // #1
-     var albumTitle = document.getElementsByClassName('album-view-title')[0];
-     var albumArtist = document.getElementsByClassName('album-view-artist')[0];
-     var albumReleaseInfo = document.getElementsByClassName('album-view-release-info')[0];
-     var albumImage = document.getElementsByClassName('album-cover-art')[0];
-     var albumSongList = document.getElementsByClassName('album-view-song-list')[0];
  
      // #2
      albumTitle.firstChild.nodeValue = album.title;
@@ -61,7 +79,29 @@ var setCurrentAlbum = function(album) {
          albumSongList.innerHTML += createSongRow(i + 1, album.songs[i].title, album.songs[i].duration);
      }
  };
+
+var albumTitle;
+var albumArtist;
+var albumReleaseInfo;
+var albumImage;
+var albumSongList;
  
  window.onload = function() {
+     albumTitle = document.getElementsByClassName('album-view-title')[0];
+     albumArtist = document.getElementsByClassName('album-view-artist')[0];
+     albumReleaseInfo = document.getElementsByClassName('album-view-release-info')[0];
+     albumImage = document.getElementsByClassName('album-cover-art')[0];
+     albumSongList = document.getElementsByClassName('album-view-song-list')[0];
      setCurrentAlbum(albumPicasso);
+     
+     var albumArray = [albumPicasso, albumMarconi, albumWilco];
+     var list = 1;
+     
+     albumImage.addEventListener('click', function(album) {
+       setCurrentAlbum(albumsArray[list]);
+       list++; 
+       if (list == albumArray.length) {
+           list = 0;
+       }
+    }); 
  };
