@@ -60,8 +60,7 @@
  .song-item-duration {
      width: 5%;
  }
-v
-ar playButtonTemplate = '<a class="album-song-button"><span class="ion-play"></span></a>';
+
  @media (max-width: 640px) and (min-width: 320px) {
      .album-view-details {
          text-align: center;
