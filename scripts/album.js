@@ -65,10 +65,6 @@ var albumWilco = {
 
 var setCurrentAlbum = function(album) {
   // #2
-     $albumTitle.text(album.title);
-     $albumArtist.text(album.artist);
-     $albumReleaseInfo.text(album.year + ' ' + album.label);
-     $albumImage.attr('src', album.albumArtUrl);
     
      $albumTitle.text(album.title);
      $albumArtist.text(album.artist);
