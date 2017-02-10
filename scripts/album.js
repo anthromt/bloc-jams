@@ -175,8 +175,6 @@ var pauseButtonTemplate = '<a class="album-song-button"><span class="ion-pause">
  // Store state of playing songs
  var currentlyPlayingSong = null;
 
- window.onload = function() { 
-
  window.onload = function() {
      albumTitle = document.getElementsByClassName('album-view-title')[0];
      albumArtist = document.getElementsByClassName('album-view-artist')[0];
@@ -197,9 +195,7 @@ var pauseButtonTemplate = '<a class="album-song-button"><span class="ion-pause">
 +            }
          }
      });
- ...
-         } 
-     });
+
      
  for (var i = 0; i < songRows.length; i++) {
          songRows[i].addEventListener('mouseleave', function(event) {
