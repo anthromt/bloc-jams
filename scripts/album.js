@@ -141,17 +141,9 @@ var createSongRow = function(songNumber, songName, songLength) {
 var setCurrentAlbum = function(album) {
      currentAlbum = album;
      var $albumTitle = $('.album-view-title');
-<<<<<<< HEAD
-     var $albumTitle = $('.album-view-title');
      var $albumArtist = $('.album-view-artist');
-     var $albumReleaseInfo = $('.album-view-release-info');   
-=======
-     var $albumArtist = $(.'album-view-artist');
      var $albumReleaseInfo = $(.'album-relase-info');
-    
->>>>>>> checkpoint-21
      $albumImage.attr('src', album.albumArtUrl);
-
      $albumSongList.empty();
  
      for (var i = 0; i < album.songs.length; i++) {
