@@ -32,6 +32,8 @@ var $previousButton = $('.main-controls .previous');
 
 var $nextButton = $('.main-controls .next');
 
+var $mainPlayPauseButton = $('.main-controls .play-pause');
+
 var setSong = function(songNumber) {
      if (currentSoundFile) {
          currentSoundFile.stop();
@@ -292,11 +294,27 @@ var findParentByClassName = function(element, targetClass) {
     }
 };
 
+var togglePlayFromPlayerBar = function() {
+    
+    if (currentSoundFile.isPaused()) {
+       $mainPlayPauseButton.html(playerBarPauseButton);
+       currentSoundFile.play();
+       var currentlyPlayingCell = getSongNumberCell(currentlyPlayingSongNumber);
+       currentlyPlayingCell.html(pauseButtonTemplate);
+    } else if (currentSoundFile) {
+       $mainPlayPauseButton.html(playerBarPlayButton);
+       currentSoundFile.pause();
+       var currentlyPlayingCell = getSongNumberCell(currentlyPlayingSongNumber);
+       currentlyPlayingCell.html(playButtonTemplate);
+    }
+};
+
 $(document).ready(function() {
     setCurrentAlbum(albumPicasso);
     setupSeekBars();
     $previousButton.click(previousSong);
     $nextButton.click(nextSong);
+    $mainPlayPauseButton.click(togglePlayFromPlayerBar);
      
  }); 
 //     var albumArray = [albumPicasso, albumMarconi, albumWilco];
