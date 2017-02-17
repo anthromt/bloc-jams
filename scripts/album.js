@@ -1,7 +1,17 @@
 var albumTitle;
+<<<<<<< HEAD
 var albumArtist;
 var albumReleaseInfo;
 var albumImage;
+=======
+
+var albumArtist;
+
+var albumReleaseInfo;
+
+var albumImage;
+
+>>>>>>> checkpoint-20
 var albumSongList;
 
 var playButtonTemplate = '<a class="album-song-button"><span class="ion-play"></span></a>';
@@ -124,14 +134,12 @@ var createSongRow = function(songNumber, songName, songLength) {
  
 var setCurrentAlbum = function(album) {
      currentAlbum = album;
-    
      var $albumTitle = $('.album-view-title');
-    
-     $albumTitle.text(album.title);
-     $albumArtist.text(album.artist);
-     $albumReleaseInfo.text(album.year + ' ' + album.label);
+     var $albumTitle = $('.album-view-title');
+     var $albumArtist = $('.album-view-artist');
+     var $albumReleaseInfo = $('.album-view-release-info');   
      $albumImage.attr('src', album.albumArtUrl);
- 
+
      $albumSongList.empty();
  
      for (var i = 0; i < album.songs.length; i++) {
